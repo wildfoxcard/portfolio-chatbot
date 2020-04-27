@@ -14,6 +14,7 @@ const botbuilder_ai_1 = require("botbuilder-ai");
 const restify = require("restify");
 const botbuilder_1 = require("botbuilder");
 const dotenv_1 = require("dotenv");
+const token_1 = require("./token");
 dotenv_1.config();
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
@@ -39,4 +40,8 @@ server.post("/api/messages", (req, res) => {
         yield echo.onTurn(context);
     }));
 });
+server.get("/api/token", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const tokenObject = yield token_1.generateToken({ userId: req.params.userId || "none" });
+    res.json(tokenObject);
+}));
 //# sourceMappingURL=app.js.map

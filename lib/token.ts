@@ -1,19 +1,16 @@
-import { Router, Request, Response } from "express";
-
-const router = Router();
-
 interface ParamObject {
   userId: string;
 }
 
 export async function generateToken({ userId }: ParamObject): Promise<void> {
+  console.log('CHANNELSECRETKEY', process.env.CHANNEL_SECRET)
   //   try {
   const response = await fetch(
     "https://directline.botframework.com/v3/directline/tokens/generate",
     {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.CHANNELSECRETKEY}`,
+        Authorization: `Bearer ${process.env.CHANNEL_SECRET}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -42,4 +39,6 @@ export async function generateToken({ userId }: ParamObject): Promise<void> {
   //   }
 }
 
-export default router;
+export default {
+  generateToken
+};

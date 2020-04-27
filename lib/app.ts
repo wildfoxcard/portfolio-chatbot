@@ -42,6 +42,6 @@ server.post("/api/messages", (req, res) => {
 });
 
 server.get("/api/token", async (req, res) => {
-  const tokenObject = await generateToken({userId: "none"});
+  const tokenObject = await generateToken({userId: req.params.userId || "none"});
   res.json(tokenObject);
 })

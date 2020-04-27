@@ -17,27 +17,27 @@ class ConfBot {
     }
     onTurn(context) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (context.activity.type === "message") {
-                let qnaResults;
-                try {
+            try {
+                if (context.activity.type === "message") {
+                    let qnaResults;
                     qnaResults = yield this._qnaMaker.generateAnswer(context.activity.text);
                     console.log("qnaResults", qnaResults);
-                }
-                catch (ex) {
-                    console.log(ex.message);
-                }
-                if (qnaResults.length > 0) {
-                    yield context.sendActivity(qnaResults[0].answer);
+                    if (qnaResults.length > 0) {
+                        yield context.sendActivity(qnaResults[0].answer);
+                    }
+                    else {
+                        yield this._luis.recognize(context).then((res) => {
+                            const top = botbuilder_ai_1.LuisRecognizer.topIntent(res);
+                            context.sendActivity(`the top intent found was ${top}`);
+                        });
+                    }
                 }
                 else {
-                    yield this._luis.recognize(context).then(res => {
-                        const top = botbuilder_ai_1.LuisRecognizer.topIntent(res);
-                        context.sendActivity(`the top intent found was ${top}`);
-                    });
+                    yield context.sendActivity(`${context.activity.type} event detected`);
                 }
             }
-            else {
-                yield context.sendActivity(`${context.activity.type} event detected`);
+            catch (ex) {
+                console.log(ex.message);
             }
         });
     }
