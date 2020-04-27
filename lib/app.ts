@@ -5,24 +5,23 @@ import * as restify from "restify";
 import { BotFrameworkAdapter } from "botbuilder";
 import { config } from "dotenv";
 import {generateToken} from './token'
-import corsMiddleware from 'restify-cors-middleware'
+import * as corsMiddleware from "restify-cors-middleware";  
  
 
 config();
 
 // const botConfig = BotConfiguration.loadSync("../test.bot", process.env.BOT_FILE_SECRET)
 
-const cors = corsMiddleware({
-  preflightMaxAge: 5,
-  origins: ['*'],
-  allowHeaders:['X-App-Version'],
-  exposeHeaders:[]
-})
+const cors = corsMiddleware({  
+  origins: ["*"],
+  allowHeaders: ["Authorization"],
+  exposeHeaders: ["Authorization"]
+});
 
 const server = restify.createServer();
  
-server.pre(cors.preflight);
-server.use(cors.actual);
+server.pre(cors.preflight);  
+server.use(cors.actual);  
 
 server.listen(process.env.port || process.env.PORT || 3978, () => {
   console.log(`${server.name} listening on ${server.url}`);
