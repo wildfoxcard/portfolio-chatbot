@@ -14,10 +14,12 @@
     "botbuilder": "^4.8.0",
     "botbuilder-ai": "^4.8.0",
     "botframework-config": "^4.8.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "react": "^16.13.1",
     "restify": "^8.5.1",
+    "restify-cors-middleware": "^1.1.1",
     "ts-node": "^8.9.0",
     "typescript": "^3.8.3"
   },

@@ -5,15 +5,28 @@ import * as restify from "restify";
 import { BotFrameworkAdapter } from "botbuilder";
 import { config } from "dotenv";
 import {generateToken} from './token'
+import corsMiddleware from 'restify-cors-middleware'
+ 
 
 config();
 
 // const botConfig = BotConfiguration.loadSync("../test.bot", process.env.BOT_FILE_SECRET)
 
 const server = restify.createServer();
+
+const cors = corsMiddleware({
+  // preflightMaxAge: 5, //Optional
+  origins: ['*'],
+  allowHeaders: ['API-Token'],
+  exposeHeaders: ['API-Token-Expiry']
+})
+ 
+// server.pre(cors.preflight)
+server.use(cors.actual)
 server.listen(process.env.port || process.env.PORT || 3978, () => {
   console.log(`${server.name} listening on ${server.url}`);
 });
+
 
 const adapter = new BotFrameworkAdapter({
   appId: process.env.MICROSOFT_APP_ID,
