@@ -4,6 +4,7 @@ import { IQnAService, BotConfiguration } from "botframework-config";
 import * as restify from "restify";
 import { BotFrameworkAdapter } from "botbuilder";
 import { config } from "dotenv";
+import {generateToken} from './token'
 
 config();
 
@@ -39,3 +40,8 @@ server.post("/api/messages", (req, res) => {
     await echo.onTurn(context);
   });
 });
+
+server.post("/api/token", async (req, res) => {
+  const tokenObject = await generateToken({userId: "none"});
+  res.json(tokenObject);
+})
