@@ -1,0 +1,129 @@
+[
+  {
+    "conversation": {
+      "id": "4oY/xy7/esqazm8uHav66xX6+58="
+    },
+    "id": "1",
+    "recipient": {
+      "id": "8c/PyulKvDS+ZqL+Q+4L8hOSXm0=",
+      "name": "edui Conference",
+      "role": "bot"
+    },
+    "from": {
+      "id": "+MOLIWfAq218cg5HwhOUKNd9i2o=",
+      "name": "Michael",
+      "role": "user"
+    },
+    "timestamp": "2020-04-24T08:11:11.100Z",
+    "type": "conversationUpdate",
+    "channelId": "chatdown",
+    "membersAdded": [
+      {
+        "id": "8c/PyulKvDS+ZqL+Q+4L8hOSXm0=",
+        "name": "edui Conference",
+        "role": "bot"
+      }
+    ],
+    "membersRemoved": []
+  },
+  {
+    "conversation": {
+      "id": "4oY/xy7/esqazm8uHav66xX6+58="
+    },
+    "id": "2",
+    "recipient": {
+      "id": "8c/PyulKvDS+ZqL+Q+4L8hOSXm0=",
+      "name": "edui Conference",
+      "role": "bot"
+    },
+    "from": {
+      "id": "+MOLIWfAq218cg5HwhOUKNd9i2o=",
+      "name": "Michael",
+      "role": "user"
+    },
+    "text": "hello",
+    "timestamp": "2020-04-24T08:11:13.100Z",
+    "type": "message",
+    "channelId": "chatdown"
+  },
+  {
+    "conversation": {
+      "id": "4oY/xy7/esqazm8uHav66xX6+58="
+    },
+    "id": "3",
+    "recipient": {
+      "id": "+MOLIWfAq218cg5HwhOUKNd9i2o=",
+      "name": "Michael",
+      "role": "user"
+    },
+    "from": {
+      "id": "8c/PyulKvDS+ZqL+Q+4L8hOSXm0=",
+      "name": "edui Conference",
+      "role": "bot"
+    },
+    "text": "Hello! what would you like me to call you?",
+    "timestamp": "2020-04-24T08:11:15.100Z",
+    "type": "message",
+    "channelId": "chatdown"
+  },
+  {
+    "conversation": {
+      "id": "4oY/xy7/esqazm8uHav66xX6+58="
+    },
+    "id": "4",
+    "recipient": {
+      "id": "8c/PyulKvDS+ZqL+Q+4L8hOSXm0=",
+      "name": "edui Conference",
+      "role": "bot"
+    },
+    "from": {
+      "id": "+MOLIWfAq218cg5HwhOUKNd9i2o=",
+      "name": "Michael",
+      "role": "user"
+    },
+    "text": "Michael",
+    "timestamp": "2020-04-24T08:11:17.100Z",
+    "type": "message",
+    "channelId": "chatdown"
+  },
+  {
+    "conversation": {
+      "id": "4oY/xy7/esqazm8uHav66xX6+58="
+    },
+    "id": "5",
+    "recipient": {
+      "id": "+MOLIWfAq218cg5HwhOUKNd9i2o=",
+      "name": "Michael",
+      "role": "user"
+    },
+    "from": {
+      "id": "8c/PyulKvDS+ZqL+Q+4L8hOSXm0=",
+      "name": "edui Conference",
+      "role": "bot"
+    },
+    "text": "Hello, Michael. Here are some examples I can help you with:\n* Are there any talks on Bot Framework?\n* When is Michael Azul Speaking\n* Who is giving the keynote?\n* Where can I hear the TypeScript talk?",
+    "timestamp": "2020-04-24T08:11:19.100Z",
+    "type": "message",
+    "channelId": "chatdown"
+  },
+  {
+    "conversation": {
+      "id": "4oY/xy7/esqazm8uHav66xX6+58="
+    },
+    "id": "6",
+    "recipient": {
+      "id": "+MOLIWfAq218cg5HwhOUKNd9i2o=",
+      "name": "Michael",
+      "role": "user"
+    },
+    "from": {
+      "id": "8c/PyulKvDS+ZqL+Q+4L8hOSXm0=",
+      "name": "edui Conference",
+      "role": "bot"
+    },
+    "text": "Just type in whatever you need! If you get stuck, just type \"help\" and I'll do what I can.",
+    "timestamp": "2020-04-24T08:11:21.100Z",
+    "type": "message",
+    "channelId": "chatdown"
+  }
+]

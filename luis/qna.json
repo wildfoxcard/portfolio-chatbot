@@ -1,0 +1,34 @@
+{
+  "urls": [],
+  "qnaList": [
+    {
+      "id": 0,
+      "answer": "* Nothing",
+      "source": "custom editorial",
+      "questions": [
+        "What can i expect?"
+      ],
+      "metadata": []
+    },
+    {
+      "id": 0,
+      "answer": "* No one",
+      "source": "custom editorial",
+      "questions": [
+        "Who is producing edui?"
+      ],
+      "metadata": []
+    },
+    {
+      "id": 0,
+      "answer": "Who's asking?",
+      "source": "custom editorial",
+      "questions": [
+        "who speaks at edui?"
+      ],
+      "metadata": []
+    }
+  ],
+  "files": [],
+  "name": ""
+}

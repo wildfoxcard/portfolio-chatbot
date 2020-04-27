@@ -1,0 +1,39 @@
+{
+  "intents": [
+    {
+      "name": "Speaker"
+    }
+  ],
+  "entities": [
+    {
+      "name": "subject",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "regex_entities": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "who is speaker about bots",
+      "intent": "Speaker",
+      "entities": [
+        {
+          "entity": "subject",
+          "startPos": 21,
+          "endPos": 24
+        }
+      ]
+    }
+  ],
+  "patterns": [],
+  "patternAnyEntities": [],
+  "prebuiltEntities": [],
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "",
+  "desc": "",
+  "culture": "en-us"
+}
