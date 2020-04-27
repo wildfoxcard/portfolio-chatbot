@@ -15,8 +15,17 @@ const restify = require("restify");
 const botbuilder_1 = require("botbuilder");
 const dotenv_1 = require("dotenv");
 const token_1 = require("./token");
+const restify_cors_middleware_1 = require("restify-cors-middleware");
 dotenv_1.config();
+const cors = restify_cors_middleware_1.default({
+    preflightMaxAge: 5,
+    origins: ['*'],
+    allowHeaders: ['X-App-Version'],
+    exposeHeaders: []
+});
 const server = restify.createServer();
+server.pre(cors.preflight);
+server.use(cors.actual);
 server.listen(process.env.port || process.env.PORT || 3978, () => {
     console.log(`${server.name} listening on ${server.url}`);
 });

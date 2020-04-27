@@ -12,17 +12,18 @@ config();
 
 // const botConfig = BotConfiguration.loadSync("../test.bot", process.env.BOT_FILE_SECRET)
 
-const server = restify.createServer();
-
 const cors = corsMiddleware({
-  // preflightMaxAge: 5, //Optional
+  preflightMaxAge: 5,
   origins: ['*'],
-  allowHeaders: ['API-Token'],
-  exposeHeaders: ['API-Token-Expiry']
+  allowHeaders:['X-App-Version'],
+  exposeHeaders:[]
 })
+
+const server = restify.createServer();
  
-// server.pre(cors.preflight)
-server.use(cors.actual)
+server.pre(cors.preflight);
+server.use(cors.actual);
+
 server.listen(process.env.port || process.env.PORT || 3978, () => {
   console.log(`${server.name} listening on ${server.url}`);
 });
